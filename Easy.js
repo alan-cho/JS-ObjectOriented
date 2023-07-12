@@ -153,4 +153,6 @@ class Truck {
 }
 */
 
-// 7)
+// 7) SKIPPED
+
+// 8)
