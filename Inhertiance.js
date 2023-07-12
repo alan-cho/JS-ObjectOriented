@@ -1,17 +1,33 @@
-// 1)
+// 1 - 4)
 /*
 class Vehicle {
   constructor(year) {
     this.year = year;
   }
+
+  startEngine() {
+    return "Ready to go!";
+  }
 }
 
-class Truck extends Vehicle {}
+class Truck extends Vehicle {
+  constructor(year, bedType) {
+    super(year);
+    this.bedType = bedType;
+  }
+
+  startEngine(speed) {
+    return `Ready to go! Drive ${speed} please!`;
+  }
+}
 
 class Car extends Vehicle {}
 
-let truck = new Truck(2003);
-console.log(truck.year); // 2003
+let truck1 = new Truck();
+console.log(truck1.startEngine("fast"));
+
+let truck2 = new Truck();
+console.log(truck2.startEngine("slow"));
 
 let car = new Car(2015);
 console.log(car.year); // 2015
