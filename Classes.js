@@ -4,15 +4,19 @@ console.log("Hello".constructor.name);
 console.log([1, 2, 3].constructor.name);
 console.log({ name: "Srdjan" }.constructor.name);
 
-// 2)
+// 2 - 6)
 class Cat {
-  constructor() {}
+  constructor(name) {
+    this.name = name;
+  }
+
+  greet() {
+    console.log(`Hello, my name is ${this.name}!`);
+  }
 }
 
-// 3)
-class Cat {}
-
-let kitty = new Cat();
+let kitty = new Cat("Sophie");
+kitty.greet();
 */
 
-// 4)
+// 7)
