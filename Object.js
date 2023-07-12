@@ -50,6 +50,26 @@ itemTwo.discount(50); // should return 25
 
 let itemThree = Object.assign({}, item);
 itemThree.discount(25); // should return 37.5
-*/
 
 // 3)
+function objectsEqual(objectOne, objectTwo) {
+  let objectOneKeys = Object.keys(objectOne);
+  let objectTwoKeys = Object.keys(objectTwo);
+  for (let i = 0; i < objectOneKeys.length; i += 1) {
+    if (objectOneKeys[i] === objectTwoKeys[i]) {
+      continue;
+    } else {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+console.log(objectsEqual({ a: "foo" }, { a: "foo" })); // true
+console.log(objectsEqual({ a: "foo", b: "bar" }, { a: "foo" })); // false
+console.log(objectsEqual({}, {})); // true
+console.log(objectsEqual({ a: "foo", b: undefined }, { a: "foo", c: 1 })); // false
+*/
+
+// 4)
