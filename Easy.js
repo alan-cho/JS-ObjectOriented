@@ -172,6 +172,61 @@ let shouter = new Shouter();
 
 person.greeting("Hello. It's very nice to meet you."); // Hello. It's very nice to meet you
 shouter.greeting("Hello my friend."); // HELLO MY FRIEND.
-*/
 
 // 9)
+const walkMixIn = {
+  walk() {
+    return `${this.name} ${this.gait()} forward.`;
+  },
+};
+
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+
+  gait() {
+    return "strolls";
+  }
+}
+
+Object.assign(Person.prototype, walkMixIn);
+
+class Cat {
+  constructor(name) {
+    this.name = name;
+  }
+
+  gait() {
+    return "saunters";
+  }
+}
+
+Object.assign(Cat.prototype, walkMixIn);
+
+class Cheetah {
+  constructor(name) {
+    this.name = name;
+  }
+
+  gait() {
+    return "runs";
+  }
+}
+
+Object.assign(Cheetah.prototype, walkMixIn);
+
+let mike = new Person("Mike");
+console.log(mike.walk());
+// "Mike strolls forward"
+
+let kitty = new Cat("Kitty");
+console.log(kitty.walk());
+// "Kitty saunters forward"
+
+let flash = new Cheetah("Flash");
+console.log(flash.walk());
+// "Flash runs forward"
+*/
+
+// 10)
