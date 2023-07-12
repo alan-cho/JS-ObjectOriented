@@ -8,6 +8,11 @@ console.log({ name: "Srdjan" }.constructor.name);
 class Cat {
   constructor() {}
 }
-*/
 
 // 3)
+class Cat {}
+
+let kitty = new Cat();
+*/
+
+// 4)
