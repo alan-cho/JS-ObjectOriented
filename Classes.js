@@ -4,19 +4,29 @@ console.log("Hello".constructor.name);
 console.log([1, 2, 3].constructor.name);
 console.log({ name: "Srdjan" }.constructor.name);
 
-// 2 - 6)
+// 2 - 6, 8 - 10)
 class Cat {
   constructor(name) {
     this.name = name;
   }
 
-  greet() {
+  personalGreeting() {
     console.log(`Hello, my name is ${this.name}!`);
+  }
+
+  rename(newName) {
+    this.name = newName;
+  }
+
+  static genericGreeting() {
+    console.log("Hello, I'm a cat!");
   }
 }
 
 let kitty = new Cat("Sophie");
-kitty.greet();
+Cat.genericGreeting();
+kitty.personalGreeting();
+
 
 // 7)
 class Person {
