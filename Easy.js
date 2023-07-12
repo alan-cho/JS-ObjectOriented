@@ -115,6 +115,42 @@ class Dog extends Animal {
     return `Hello ${this.master}! Woof woof!`;
   }
 }
-*/
 
 // 6)
+class Vehicle {
+  constructor(make, model, wheels) {
+    this.make = make;
+    this.model = model;
+    this.wheels = wheels;
+  }
+
+  getWheels() {
+    return this.wheels;
+  }
+
+  info() {
+    return `${this.make} ${this.model}`;
+  }
+}
+
+class Car extends Vehicle {
+  constructor(make, model, wheels) {
+    super(make, model, wheels);
+  }
+}
+
+class Motorcycle {
+  constructor(make, model, wheels) {
+    super(make, model, wheels);
+  }
+}
+
+class Truck {
+  constructor(make, model, wheels, payload) {
+    super(make, model, wheels);
+    this.payload = payload;
+  }
+}
+*/
+
+// 7)
