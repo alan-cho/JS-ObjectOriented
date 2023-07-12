@@ -70,6 +70,81 @@ console.log(objectsEqual({ a: "foo" }, { a: "foo" })); // true
 console.log(objectsEqual({ a: "foo", b: "bar" }, { a: "foo" })); // false
 console.log(objectsEqual({}, {})); // true
 console.log(objectsEqual({ a: "foo", b: undefined }, { a: "foo", c: 1 })); // false
-*/
 
 // 4)
+function createStudent(name, year) {
+  return {
+    name,
+    year,
+    courses: [],
+    notes: {},
+
+    info() {
+      console.log(`${this.name} is a ${this.year} year student.`);
+    },
+
+    addCourse(course) {
+      this.courses.push(course);
+    },
+
+    listCourses() {
+      console.log(this.courses);
+    },
+
+    getCourseName(courseCode) {
+      for (let course of this.courses) {
+        if (course["code"] === courseCode) {
+          return course["name"];
+        }
+      }
+    },
+
+    addNote(courseCode, note) {
+      courseName = this.getCourseName(courseCode);
+      if (this.notes[courseName]) {
+        this.notes[courseName] += `; ${note}`;
+      } else {
+        this.notes[courseName] = note;
+      }
+    },
+
+    updateNote(courseCode, note) {
+      courseName = this.getCourseName(courseCode);
+      for (let course in this.courses) {
+        if (course["name"] === courseName) {
+          this.notes[courseName] = note;
+        }
+      }
+    },
+
+    viewNotes() {
+      for (let note in this.notes) {
+        console.log(`${note}: ${this.notes[note]}`);
+      }
+    },
+  };
+}
+
+let foo = createStudent("Foo", "1st");
+
+foo.info(); // "Foo is a 1st year student"
+foo.listCourses(); // [];
+
+foo.addCourse({ name: "Math", code: 101 });
+foo.addCourse({ name: "Advanced Math", code: 102 });
+foo.listCourses(); // [{ name: 'Math', code: 101 }, { name: 'Advanced Math', code: 102 }]
+
+foo.addNote(101, "Fun course");
+foo.addNote(101, "Remember to study for algebra");
+foo.viewNotes(); // "Math: Fun course; Remember to study for algebra"
+
+foo.addNote(102, "Difficult subject");
+foo.viewNotes();
+// "Math: Fun course; Remember to study for algebra"
+// "Advance Math: Difficult subject"
+
+foo.updateNote(101, "Fun course");
+foo.viewNotes();
+// "Math: Fun course"
+// "Advanced Math: Difficult subject"
+*/
