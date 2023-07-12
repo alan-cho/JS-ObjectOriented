@@ -87,4 +87,27 @@ console.log(dog1.swim());
 console.log(fish1.swim());
 */
 
-// 7)
+// 7 - 8)
+class Vehicle {
+  constructor(year) {
+    this.year = year;
+  }
+}
+class Truck extends Vehicle {}
+
+const towMixIn = {
+  tow() {
+    return "I can tow a trailer!";
+  },
+};
+
+Object.assign(Truck.prototype, towMixIn);
+
+class Car extends Vehicle {}
+
+let truck = new Truck(2002);
+console.log(truck.year);
+console.log(truck.tow());
+
+let car = new Car(2015);
+console.log(car.year);
