@@ -148,3 +148,5 @@ foo.viewNotes();
 // "Math: Fun course"
 // "Advanced Math: Difficult subject"
 */
+
+// 5) SKIPPED
