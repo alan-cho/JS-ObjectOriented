@@ -31,4 +31,29 @@ console.log(truck2.startEngine("slow"));
 
 let car = new Car(2015);
 console.log(car.year); // 2015
+
+// 5)
+class Cat {
+  constructor(name) {
+    this.name = name;
+  }
+
+  greet() {
+    return `Hello! My name is ${this.name}!`;
+  }
+}
+
+const walkMixIn = {
+  walk: function () {
+    return "Let's go for a walk!";
+  },
+};
+
+Object.assign(Cat.prototype, walkMixIn);
+
+let kitty = new Cat("Sophie");
+console.log(kitty.greet());
+console.log(kitty.walk());
 */
+
+// 6)
